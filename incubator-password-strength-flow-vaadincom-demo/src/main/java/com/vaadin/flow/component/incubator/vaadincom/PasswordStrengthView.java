@@ -1,5 +1,6 @@
 package com.vaadin.flow.component.incubator.vaadincom;
 
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.incubator.PasswordStrength;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.demo.DemoView;
@@ -13,12 +14,16 @@ public class PasswordStrengthView extends DemoView {
         PasswordField passwordField = new PasswordField();
         passwordField.setLabel("Press enter for change");
         PasswordStrength passwordStrength = new PasswordStrength();
+        Div text = new Div();
 
         passwordField.addValueChangeListener(changeEvent -> {
             passwordStrength.setStrength(changeEvent.getValue().length() / 3);
+            text.setText("Password strength set to " + passwordStrength.getStrength());
         });
 
+        addCard("Basic Password Strength setting usage", passwordField, passwordStrength, text);
 
-        addCard("Basic Password Strength usage", passwordField, passwordStrength);
+
+
     }
 }

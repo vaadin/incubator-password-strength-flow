@@ -17,7 +17,6 @@ package com.vaadin.flow.component.incubator;
  * #L%
  */
 
-import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
@@ -32,17 +31,8 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @HtmlImport("frontend://bower_components/incubator-password-strength/src/incubator-password-strength.html")
 public class PasswordStrength extends PolymerTemplate<PasswordStrength.PasswordStrengthModel> {
 
-
-    public PasswordStrength() {}
-
-    @Override
-    public void onAttach(AttachEvent attachEvent) {
-        super.onAttach(attachEvent);
-    }
-
-
     /**
-     * Setting strength for indication. From 1 to 5. Everything that bigger 5 have same affect as 5
+     * Setting strength for indication. From 0 to 5. Everything that bigger 5 have same affect as 5
      *
      * @param count
      */
