@@ -118,7 +118,7 @@
                         <index>true</index>
                         <manifest>
                             <addClasspath>false</addClasspath>
-                            <!-- Implementation-Title and Implementation-Version 
+                            <!-- Implementation-Title and Implementation-Version
                                 come from the POM by default -->
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
@@ -130,7 +130,7 @@
                             <AdVaaLicen>cval</AdVaaLicen>
                             <AdVaaName>incubator-password-strength</AdVaaName>
                             <AdVaaPkg>com.vaadin.incubator.password.strength</AdVaaPkg>
-                            <!-- Implementation-Title and Implementation-Version 
+                            <!-- Implementation-Title and Implementation-Version
                                 come from the POM by default -->
                             <Implementation-Title>Vaadin Crud</Implementation-Title>
                         </manifestEntries>

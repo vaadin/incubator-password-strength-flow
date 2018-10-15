@@ -1,6 +1,6 @@
 # Incubator Password Strength for Flow
 
-Incubator Password Strength for Flow is a UI component add-on for Vaadin 10.
+Incubator Password Strength for Flow is server-side component of [incubator-password-strength](https://github.com/vaadin/incubator-password-strength) web component for Vaadin 10.
 
 ## License & Author
 
@@ -9,18 +9,27 @@ This Add-on is distributed under [Commercial Vaadin Add-on License version 3](ht
 Incubator Password Strength is written by Vaadin Ltd.
 
 
+## Usage
+
+```
+PasswordStrength passwordStrength = new PasswordStrength();
+passwordStrength.setStrength(4);
+```
+Common use case would be to track changes of PasswordField and then calculating and setting strength on every change: 
+```
+passwordField.addValueChangeListener(changeEvent -> {
+    passwordStrength.setStrength(changeEvent.getValue().length() / 3);
+});
+```  
+
 ## Setting up for development:
 
 Clone the project in GitHub (or fork it if you plan on contributing)
 
 ```
-git clone git@github.com:vaadin/incubator-paginator-flow.git
+https://github.com/vaadin/incubator-password-strength-flow
 ```
 
 To build and install the project into the local repository run 
 
-```mvn install -DskipITs```
-
-in the root directory. `-DskipITs` will skip the integration tests, which require a TestBench license. If you want to run all tests as part of the build, run
-
-```mvn install```
+```mvn install ```

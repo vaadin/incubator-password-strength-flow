@@ -18,25 +18,52 @@ package com.vaadin.flow.component.incubator;
  */
 
 import com.vaadin.flow.component.AttachEvent;
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.templatemodel.TemplateModel;
 
+/**
+ * Server-side component for the <code>incubator-password-strength</code> element.
+ *
+ * @author Vaadin Ltd
+ */
 @Tag("incubator-password-strength")
-@HtmlImport("frontend://bower_components/vaadin-crud/src/vaadin-crud.html")
-public class PasswordStrength extends Component {
+@HtmlImport("frontend://bower_components/incubator-password-strength/src/incubator-password-strength.html")
+public class PasswordStrength extends PolymerTemplate<PasswordStrength.PasswordStrengthModel> {
 
-    /**
-     * Initializes a new PasswordStrength with a default menu.
-     */
-    public PasswordStrength() {
 
-//        getElement().appendChild(new H1("Hello PasswordStrength!").getElement());
-    }
+    public PasswordStrength() {}
 
     @Override
     public void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
+    }
+
+
+    /**
+     * Setting strength for indication. From 1 to 5. Everything that bigger 5 have same affect as 5
+     *
+     * @param count
+     */
+    public void setStrength(int count) {
+        getModel().setStrength(count);
+    }
+
+    /**
+     *  Getting strength indication
+     *
+     * @return strength indication
+     */
+    public int getStrength() {
+        return getModel().getStrength();
+    }
+
+    /**
+     * This model binds properties between java(PasswordStrength) and polymer(incubator-password-strength.html)
+     */
+    public interface PasswordStrengthModel extends TemplateModel {
+        void setStrength(int count);
+        int getStrength();
     }
 }
