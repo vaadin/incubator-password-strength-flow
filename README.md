@@ -1,3 +1,6 @@
+# Deprecated
+This repository has been deprecated. Please find the latest code here: https://github.com/vaadin-component-factory/password-strength
+
 # Incubator Password Strength for Flow
 
 Incubator Password Strength for Flow is server-side component of [incubator-password-strength](https://github.com/vaadin/incubator-password-strength) web component for Vaadin 10. 
